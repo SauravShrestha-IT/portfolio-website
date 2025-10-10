@@ -25,6 +25,7 @@
         <div class="header-text">
             <p>UI/UX DESIGNER</p>
             <h1>Hi, I'm <span>Saurav</span><br> From <span>Nepal</span></h1>
+            <p>I’m passionate about creating clean and user-friendly <br>interfaces that improve the user experience.</p>
         </div>
     </div>
     </div>
@@ -122,8 +123,26 @@
        <a href="#"><i class="fa-duotone fa-solid fa-up-right-from-square"></i></a>
         </div>
     </div>
+    <div id="more-works" style="display:none;">
+    <div class="work">
+        <img src="images/work-4.jpg">
+        <div class="layer">
+            <h3>Travel App</h3>
+            <p>Explore the world with this amazing travel app.</p>
+            <a href="#"><i class="fa-duotone fa-solid fa-up-right-from-square"></i></a>
+        </div>
+    </div>
+    <div class="work">
+        <img src="images/work-5.webp">
+        <div class="layer">
+            <h3>Fitness App</h3>
+            <p>Track your workouts and stay healthy.</p>
+            <a href="#"><i class="fa-duotone fa-solid fa-up-right-from-square"></i></a>
+        </div>
+    </div>
 </div>
-<a href="#" class="btn">See More</a>
+</div>
+<a href="#" id="see-more" class="btn">See More</a>
                     </div>
                  </div>
                  <!-- -----------contact--------- -->
@@ -172,6 +191,22 @@
                     document.getElementById(tabname).classList.add("active-tab");
                 }
             </script>
+            <script>
+            const seeMoreBtn = document.getElementById('see-more');
+const moreWorks = document.getElementById('more-works');
+const workList = document.querySelector('.work-list');
+
+seeMoreBtn.addEventListener('click', function(e) {
+    e.preventDefault(); // prevent default link behavior
+    moreWorks.style.display = 'flex'; // show hidden works
+    // append new works to the existing work list
+    Array.from(moreWorks.children).forEach(work => {
+        workList.appendChild(work);
+    });
+    moreWorks.style.display = 'none'; // hide the template again
+    seeMoreBtn.style.display = 'none'; // hide button after loading
+});
+</script>
             <script>
                 var sidemenu = document.getElementById("sidemenu");
                 function  openmenu(){
